@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; //This clears the div
+      document.getElementById("myDiv").style.display = "none"; // This line is the bug
+      //The div remains hidden even if we try to show it using the following line. The innerHTML is empty but the element remains hidden. 
+      document.getElementById("myDiv").style.display = "block";
+    }
+  </script>
+</body>
+</html>
