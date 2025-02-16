@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      // Solution 1: Change the order of operations
+      document.getElementById("myDiv").style.display = "none";
+      document.getElementById("myDiv").innerHTML = "";
+      document.getElementById("myDiv").style.display = "block";
+
+      //Solution 2: Use a class to control visibility
+      // document.getElementById("myDiv").classList.add("hidden");
+      // document.getElementById("myDiv").classList.remove("hidden");
+    }
+  </script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</body>
+</html>
